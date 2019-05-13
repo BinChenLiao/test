@@ -1,0 +1,72 @@
+{
+  "name": "cli-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "multifunctional-datepicker": "^1.0.3",
+    "vue": "^2.6.10",
+    "vux": "^2.9.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.21",
+    "vux-loader": "^1.2.9"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "arrow-parens": 0,
+      "no-console": 0,
+      "eqeqeq": 0,
+      "prefer-promise-reject-errors": 0,
+      "generator-star-spacing": 0,
+      "quotes": 0,
+      "comma-dangle": 0,
+      "handle-callback-err": 0,
+      "no-unused-vars": 0,
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "no-mixed-spaces-and-tabs": 0,
+      "no-tabs": 0,
+      "indent": 0,
+      "no-extend-native": 0,
+      "semi": 0
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

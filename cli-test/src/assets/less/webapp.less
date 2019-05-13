@@ -1,0 +1,194 @@
+
+/**
+ * 多倍屏
+ * */
+ .bg(@url){
+  background-image: url(".@{url}@1x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) {
+    background-image: url(".@{url}@2x.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+/**
+ * 边框 1px -- 弃用
+ * */
+.border-1px(@color: #D2D2D2, @opacty: 1){
+  position: relative;
+  &:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid @color;
+    color: @color;
+    opacity: @opacty;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+    &:after{
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      right: 0;
+      height: 1px;
+      border-bottom: 1px solid @color;
+      color: @color;
+      opacity: @opacty;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleY(0.5); // 通过旋转来实现 1px
+      transform: scaleY(0.5);
+    }
+  }
+}
+.border(@color: #D2D2D2, @radius: 0px) {
+  position: relative;
+  &:after{
+    content: ' ';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    border: 1px solid @color;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    border-radius: @radius;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+/**
+ * 边框 1px 上 :after
+ * */
+.border-top(@color: #D2D2D2, @radius: 0px){
+  position: relative;
+  &:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid @color;
+    color: @color;
+    border-radius: @radius;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+    &:after{
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      right: 0;
+      height: 1px;
+      border-bottom: 1px solid @color;
+      color: @color;
+      border-radius: @radius;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+}
+
+/**
+ * 边框 1px 右 :before
+ * */
+.border-right(@color: #D2D2D2, @radius: 0px){
+  position: relative;
+  &:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid @color;
+    color: @color;
+    border-radius: @radius;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+    &:before{
+      content: " ";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -1px;
+      height: 100%;
+      width: 1px;
+      border-right: 1px solid @color;
+      color: @color;
+      border-radius: @radius;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+  }
+}
+.border-left(@color: #D2D2D2, @radius: 0px){
+  position: relative;
+  &:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid @color;
+    color: @color;
+    border-radius: @radius;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+    &:before{
+      content: " ";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1px;
+      height: 100%;
+      width: 1px;
+      border-left: 1px solid @color;
+      color: @color;
+      border-radius: @radius;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+  }
+}
+.weui-cells{
+  .weui-cell{
+    .vux-cell-bd{
+      .vux-label{
+        // font-size: 12px;
+      }
+    }
+    .weui-cell__ft{
+      // font-size: 12px;
+    }
+  }
+}
